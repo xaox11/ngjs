@@ -1,2 +1,0 @@
-# ngjs
-Training from Coursera
