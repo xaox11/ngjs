@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="card text-white ">
+    <ol>
+      <li ng-repeat="item in foundItems">
+        <div style="padding-top:  50px" class="card-header">
+          <p>{{item.name | uppercase}} - {{item.short_name}}</p>
+        </div>
+        <div class="card-body"> {{item.description}}</div>
+        <button class="btn btn-danger" ng-click="onRemove({index: $index})">Don't want this one!</button>
+      </li>
+    </ol>
+  </div>
+</div>
+<br>

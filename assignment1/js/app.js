@@ -34,7 +34,7 @@
       $scope.showWarning = function () {
         $scope.listOfMyStrings();
         if ($scope.listings.length === 0) {
-          $scope.textStyle = {'color': 'red','border': '1px solid red'};
+          $scope.textStyle = {'color': 'red', 'border': '1px solid red'};
           $scope.warning = "Please enter data first";
         } else {
           $scope.textStyle = {'color': 'green', 'border': '1px solid green'};
