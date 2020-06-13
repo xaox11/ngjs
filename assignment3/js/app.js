@@ -10,20 +10,30 @@
   function NarrowItDownController(MenuSearchService) {
     var narrow = this;
     narrow.searchTerm = "";
-
+    narrow.found = [];
 
     narrow.search = function () {
-      var promise = MenuSearchService.getMatchedMenuItems(narrow.searchTerm);
 
-      promise.then(function (result) {
-          narrow.found = result;
-        }
-      )
+      if (narrow.searchTerm.trim() !== "") {
+
+        var promise = MenuSearchService.getMatchedMenuItems(narrow.searchTerm);
+
+        promise.then(function (result) {
+            narrow.found = result;
+          }
+        )
+      } else {
+        narrow.found = [];
+      }
     }
-
     narrow.removeItem = function (index) {
       narrow.found.splice(index, 1);
     }
+
+    narrow.showIsEmpty = function () {
+      return narrow.searchTerm.trim() === "" || narrow.found.length === 0
+    }
+
   }
 
   MenuSearchService.$inject = ['$http'];
