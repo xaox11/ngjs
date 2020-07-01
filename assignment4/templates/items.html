@@ -1,0 +1,8 @@
+<h1>Items</h1>
+<a ui-sref="home">Home</a>
+<a ui-sref="categories">Categories</a>
+<div ng-repeat="item in $ctrl.items">
+  <h3>{{item.name}} - <span class="text-danger">{{item.price_large | currency }}</span></h3>
+  <i>{{item.description}}</i>
+</div>
+
